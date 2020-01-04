@@ -1,0 +1,11 @@
+SMIS s8, {7}
+SMIS s10, {0, 11}
+NOP
+SMIT t2, {(10, 2), (4, 6)}
+1, H s10
+1, cz t2
+2, X s10
+1, Meas s10
+QWAIT 10
+QWAITR 10
+1, H s10 | cz t2 | X s8

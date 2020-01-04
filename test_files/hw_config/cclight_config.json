@@ -1,0 +1,133 @@
+{
+   "num_sim_cycles": 2000,
+   "instruction_type": 1,
+   "qubit_simulator": 0,
+   "hardware_settings": {
+      "qubit_number": 7,
+      "vliw_width": 3,
+      "data_memory_size": "1M"
+   },
+   "topology": {
+      "x_size": 5,
+      "y_size": 3,
+      "qubits": [
+         {
+            "id": 0,
+            "x": 1,
+            "y": 2
+         },
+         {
+            "id": 1,
+            "x": 3,
+            "y": 2
+         },
+         {
+            "id": 2,
+            "x": 0,
+            "y": 1
+         },
+         {
+            "id": 3,
+            "x": 2,
+            "y": 1
+         },
+         {
+            "id": 4,
+            "x": 4,
+            "y": 1
+         },
+         {
+            "id": 5,
+            "x": 1,
+            "y": 0
+         },
+         {
+            "id": 6,
+            "x": 3,
+            "y": 0
+         }
+      ],
+      "edges": [
+         {
+            "id": 0,
+            "src": 2,
+            "dst": 0
+         },
+         {
+            "id": 1,
+            "src": 0,
+            "dst": 3
+         },
+         {
+            "id": 2,
+            "src": 3,
+            "dst": 1
+         },
+         {
+            "id": 3,
+            "src": 1,
+            "dst": 4
+         },
+         {
+            "id": 4,
+            "src": 2,
+            "dst": 5
+         },
+         {
+            "id": 5,
+            "src": 5,
+            "dst": 3
+         },
+         {
+            "id": 6,
+            "src": 3,
+            "dst": 6
+         },
+         {
+            "id": 7,
+            "src": 6,
+            "dst": 4
+         },
+         {
+            "id": 8,
+            "src": 0,
+            "dst": 2
+         },
+         {
+            "id": 9,
+            "src": 3,
+            "dst": 0
+         },
+         {
+            "id": 10,
+            "src": 1,
+            "dst": 3
+         },
+         {
+            "id": 11,
+            "src": 4,
+            "dst": 1
+         },
+         {
+            "id": 12,
+            "src": 5,
+            "dst": 2
+         },
+         {
+            "id": 13,
+            "src": 3,
+            "dst": 5
+         },
+         {
+            "id": 14,
+            "src": 6,
+            "dst": 3
+         },
+         {
+            "id": 15,
+            "src": 4,
+            "dst": 6
+         }
+      ]
+   }
+}

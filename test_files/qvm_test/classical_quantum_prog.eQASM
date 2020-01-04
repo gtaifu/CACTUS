@@ -1,0 +1,24 @@
+smis s10, {3, 5}
+smis s8, {1}
+nop
+smit t2, {(0, 2), (4, 6)}
+
+loop:
+    ldi r9, 0xf    # r9=15
+    nop
+    1, H s10
+    1, CZ t2
+    2, Rx90 s10
+    1, Meas s10
+    qwaitr r9
+    qwait 5
+    qwait 1
+    qwait 1
+    FMR r15,q3
+    FMR r16,q5
+    qwait 10
+    qwait 1
+    qwait 1
+    bne r15, r16, loop # will be decomposed to 3 instructions: cmp r31,r30; nop; br ne,loop
+
+stop

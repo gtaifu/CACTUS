@@ -1,0 +1,12 @@
+sim_results/
+.ipynb_checkpoints/
+__pycache__/
+*.csv
+*.vcd
+.vscode/
+.vs/
+.editorconfig
+build/
+vsbuild/
+.vscode/
+.VSCodeCounter/

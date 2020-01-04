@@ -1,0 +1,6 @@
+{
+    "assemble_instruction": "quantum_prog",
+    "opcode_to_opname": "opcode_to_opname_luts.json",
+    "logs_level": "log_levels.json",
+    "global_setting": "global_setting.json"
+}

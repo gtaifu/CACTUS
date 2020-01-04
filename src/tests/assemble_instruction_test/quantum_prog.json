@@ -1,0 +1,42 @@
+{
+    {
+        "instruction": "NOP"
+    },
+    {
+        "instruction": "QWAIT",
+        "wait_time": 100
+    }，
+    {
+        "instruction": "SMIS",
+        "register": "s10",
+        "qubits": [
+            0,
+            1
+        ]
+    }，
+    {
+        "instruction": "SMIT",
+        "register": "t10",
+        "qubits": [
+            [
+                0,
+                1
+            ],
+            [
+                2,
+                3
+            ]
+        ]
+    }，
+    {
+        "wait_time": 2,
+        {
+            "instruction": "Hadmard",
+            "register": "10"
+        },
+        {
+            "instruction": "X",
+            "register": "8"
+        }
+    }
+}

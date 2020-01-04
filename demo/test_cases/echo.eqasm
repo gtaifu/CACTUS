@@ -1,0 +1,73 @@
+SMIS s0, {0}
+
+# the memory is shared between the host CPU and QPU
+
+# K = 24
+LDI  r0, 24
+
+# 0x404: the address of intervals[0], r1: the register to traverse over the array intervals
+LDI  r1, 0x404
+
+# N = 1024
+LDI r2, 1024
+
+# 0x800: the address of results[0][0], r3: the address in this register to store the result
+LDI r3, 0x800
+
+# the step length of the iteration
+LDI r5, 1
+
+# the Byte number of the type int
+LDI r6, 4
+
+# the count of Round_iteration
+LDI r4, 0 # corresponding to the variable j used to compare with N
+
+Round_iteration:
+
+	# the count of Sampling_iteration
+	LDI r7, 0  # corresponding to the variable i used in interval[i]
+
+	Sampling_iteration:
+
+		# initialize the qubit
+		QWAIT 100
+
+		x90 s0
+		LW r24, 0(r1)	# r24 stores each interval[i]
+		QWAITR r24
+		x180 s0
+		QWAITR r24
+		x90 s0
+
+		ADD r1, r1, r6
+
+		Measure s0
+		QWAIT 30	# wait after the msmt
+		QWAIT 1
+		QWAIT 1
+		QWAIT 1
+		NOP
+		FMR r8, q0
+
+		# store the measurement result to the memory
+		SW r8, 0(r3)
+		# update the address to store the result
+		ADD r3, r3, r6
+
+		# the end of the Sampling_iteration
+		# i.e., check i < K
+		CMP r7, r0
+		ADD r7, r7, r5
+		NOP
+		BR LTU, Sampling_iteration
+
+	# the end of the Round_iteration
+	# to check if the iteration has been performed for N times (j < N)
+	CMP r4, r2
+	ADD r4, r4, r5
+	NOP
+	BR LTU, Round_iteration
+
+# the processor stops after all instructions have been executed
+stop

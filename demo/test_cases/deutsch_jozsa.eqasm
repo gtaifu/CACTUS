@@ -1,0 +1,105 @@
+XOR r0, r0, r0
+ADDI r1, r0, 1
+ADDI r2, r0, 0x2000
+SMIS s0, {0}
+SMIS s1, {1}
+SMIS s2, {2}
+ADDI r3, r0, 4096
+ADDI r3, r0, 4100
+ADDI r4, r0, 4104
+ADDI r4, r0, 4108
+ADDI r5, r0, 4112
+ADDI r5, r0, 4116
+QWAIT 100
+QWAIT 100
+continue_0:
+function_3_end:
+
+function_2_end:
+
+QWAIT 100
+ADDI r6, r0, 4120
+ADDI r6, r0, 4124
+1, H s0
+2, H s1
+continue_1:
+function_4_end:
+
+2, x180 s2
+1, H s2
+function_1_end:
+
+ADDI r7, r0, 4128
+ADDI r7, r0, 4132
+function_5_end:
+
+ADDI r8, r0, 4136
+ADDI r8, r0, 4140
+2, H s0
+2, H s1
+continue_2:
+function_6_end:
+
+ADDI r9, r0, 4144
+ADDI r10, r0, 4148
+ADDI r11, r0, 4152
+ADDI r11, r0, 4156
+ADDI r12, r0, 4160
+Measure s0
+QWAIT 30
+QWAIT 1
+QWAIT 1
+QWAIT 1
+FMR r13, q0
+ADD r14, r13, r0
+Measure s1
+QWAIT 30
+QWAIT 1
+QWAIT 1
+QWAIT 1
+FMR r15, q1
+ADD r16, r15, r0
+continue_3:
+ADDI r10, r0, 4166
+ADD r17, r14, r0
+ADD r18, r16, r0
+BEQ r0, r0, function_7_end
+function_7_end:
+
+ADDI r9, r0, 4172
+ADD r19, r17, r0
+ADD r20, r18, r0
+SB r1, 0x1052(r0)
+SB r19, 0x1050(r0)
+SB r20, 0x1051(r0)
+ADDI r21, r0, 2
+SW r21, 0(r9)
+ADDI r22, r0, 2
+SW r22, 0x105f(r0)
+ADDI r23, r0, 0
+SW r23, 0x1063(r0)
+ADDI r24, r0, 2
+SW r24, 0x1067(r0)
+BNE r19, r1, if_0_end
+ADD r0, r0, r0
+SB r0, 0x1052(r0)
+BEQ r0, r0, continue_4
+if_0_end:
+ADDI r23, r0, 1
+SW r23, 0x1063(r0)
+BNE r20, r1, if_1_end
+ADD r0, r0, r0
+SB r0, 0x1052(r0)
+BEQ r0, r0, continue_4
+if_1_end:
+continue_4:
+LB r25, 0x1052(r0)
+ADD r26, r25, r0
+BEQ r0, r0, function_0_end
+function_0_end:
+
+ADD r27, r26, r0
+ADDI r28, r0, 1536
+SB r27, 0x0(r28)
+BEQ r0, r0, function_null_end
+function_null_end:

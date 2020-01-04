@@ -1,0 +1,7 @@
+{
+    "console": "trace",
+    "config_logger": "trace",
+    "telf_logger": "trace",
+    "counter_registry_logger": "trace",
+    "json_logger": "trace"
+}

@@ -1,0 +1,7 @@
+{
+    "sim_time": 500,
+    "num_qubits": 16,
+    "vliw_width": 3,
+    "qubit_simulator": 0,
+    "instruction_type": 1
+}

@@ -1,0 +1,8 @@
+{
+    "quantum chip topology": "./cclight_config.json",
+    "qisa binary": "../test_cases/prog_1.bin",
+    "qisa assemble": "../test_cases/echo.eqasm",
+    "output directory": "sim_output/",
+    "qubit_gate_config": "./qubit_gate_config.json",
+    "mock result": "./mock_result"
+}

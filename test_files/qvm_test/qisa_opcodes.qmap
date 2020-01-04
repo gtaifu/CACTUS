@@ -1,0 +1,68 @@
+# Classic instructions (single instruction format)
+def_opcode["nop"]      = 0x00
+def_opcode["br"]       = 0x01
+def_opcode["stop"]     = 0x08
+def_opcode["cmp"]      = 0x0d
+def_opcode["ldi"]      = 0x16
+def_opcode["ldui"]     = 0x17
+def_opcode["or"]       = 0x18
+def_opcode["xor"]      = 0x19
+def_opcode["and"]      = 0x1a
+def_opcode["not"]      = 0x1b
+def_opcode["add"]      = 0x1e
+def_opcode["sub"]      = 0x1f
+
+# quantum-classical mixed instructions (single instruction format)
+def_opcode["fbr"]      = 0x14
+def_opcode["fmr"]      = 0x15
+
+# quantum instructions (single instruction format)
+def_opcode["smis"]     = 0x20
+def_opcode["smit"]     = 0x28
+def_opcode["qwait"]    = 0x30
+def_opcode["qwaitr"]   = 0x38
+
+
+# quantum instructions (double instruction format)
+# No arguments
+def_q_arg_none['QNOP'] = 0x00
+
+# the following opcodes are reserved for measurements.
+#  reserved msmt        = 0x04
+#  reserved msmt        = 0x05
+def_q_arg_st['MeasZ']   = 0x06
+#  reserved msmt        = 0x07
+
+# Uses register 'S'
+def_q_arg_st['H']        = 1
+def_q_arg_st['X45']      = 2
+def_q_arg_st['Xm45']     = 3
+def_q_arg_st['X90']      = 8
+def_q_arg_st['Xm90']     = 9
+def_q_arg_st['X']        = 10
+def_q_arg_st['Xm180']    = 11
+def_q_arg_st['Y90']      = 12
+def_q_arg_st['Ym90']     = 13
+def_q_arg_st['Z45']      = 14
+def_q_arg_st['Zm45']     = 15
+def_q_arg_st['X15']      = 16
+def_q_arg_st['Xm15']     = 17
+def_q_arg_st['X30']      = 18
+def_q_arg_st['Xm30']     = 19
+def_q_arg_st['X60']      = 20
+def_q_arg_st['Xm60']     = 21
+def_q_arg_st['X75']      = 22
+def_q_arg_st['Xm75']     = 23
+def_q_arg_st['X105']     = 24
+def_q_arg_st['Xm105']    = 25
+def_q_arg_st['Z90']      = 26
+def_q_arg_st['Zm90']     = 27
+
+# Uses register 'T'
+def_q_arg_tt['CZ_1']    = 128
+def_q_arg_tt['CZ_2']    = 129
+def_q_arg_tt['CZ_3']    = 130
+def_q_arg_tt['CZ_4']    = 131
+def_q_arg_tt['CZ_5']    = 132
+def_q_arg_tt['CZ_6']    = 133
+def_q_arg_tt['CZ_7']    = 134

@@ -1,0 +1,39 @@
+SMIS s0, {0}
+SMIS s1, {1}
+SMIS s2, {0, 1}
+SMIT t0, {(0, 1)}
+
+# not necessary to read the memory for initialization values
+
+# initialize the two qubits
+  QWAIT 100
+  H    s0
+
+# CNOT q0, q1
+  2, H    s1
+  2, CZ   t0
+  2, H    s1
+
+  # the first condition fails, do not execute `X(q1)`
+  # the second condition succeeds, executes `Z(q0)`
+  2, Z180    s0
+
+  # CNOT q0, q1
+  2, H    s1
+  2, CZ   t0
+  2, H    s1
+
+  2, H    s0
+
+  2, Measure s2
+  QWAIT 30
+  QWAIT 1
+  QWAIT 1
+  QWAIT 1
+  FMR  r3, q0
+  FMR  r4, q1
+
+# store the measurement result to the memory.
+  LDI r0, 0
+  SW  r3, 0x600(r0)
+  SW  r4, 0x604(r0)

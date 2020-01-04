@@ -1,0 +1,60 @@
+SMIS s0, {0}
+SMIS s1, {1}
+SMIS s2, {2}
+SMIS s3, {3}
+SMIS s4, {0, 1, 2}
+
+SMIT t0, {(0, 3}}
+SMIT t1, {(1, 3}}
+SMIT t2, {(2, 3}}
+
+# 0x400: the address of result_arr, r4: the address in this register to store the result
+LDI r4, 0x400
+
+# the Byte number of the type int
+LDI r6, 4
+
+# corresponding to N
+LDI r7, 3
+
+# store the length of the array
+SW r7, 0(r4)
+ADD r4, r4, r6
+
+# corresponding to state_preparation
+QWAIT 100  # initialize the all qubits to |0>
+2, H s4
+1, X180 s3
+1, H s3
+
+# corresponding to oracle_all_one
+2, H s3
+2, CZ t0
+2, H s3
+2, H s3
+2, CZ t1
+2, H s3
+2, H s3
+2, CZ t2
+2, H s3
+
+2, H s4
+
+# measurement
+2, measure s4
+QWAIT 30	# wait after the msmt
+QWAIT 1
+QWAIT 1
+QWAIT 1
+NOP
+
+FMR r8, q0
+SW r8, 0(r4)
+ADD r4, r4, r6
+
+FMR r8, q1
+SW r8, 0(r4)
+ADD r4, r4, r6
+
+FMR r8, q2
+SW r8, 0(r4)

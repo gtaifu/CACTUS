@@ -1,0 +1,11 @@
+{
+    "console": "error",
+    "counter_registry_logger": "error",
+    "config_logger": "error",
+    "telf_logger": "error",
+    "cache_logger": "error",
+    "MRF_logger": "error",
+    "qsim_logger": "error",
+    "json_logger": "error",
+    "asm_logger": "error"
+}

@@ -1,0 +1,12 @@
+{
+    "console": "trace",
+    "counter_registry_logger": "warning",
+    "config_logger": "trace",
+    "telf_logger": "trace",
+    "cache_logger": "warning",
+    "MRF_logger": "warning",
+    "qsim_logger": "debug",
+    "json_logger": "info",
+    "asm_logger": "trace",
+    "server_logger": "trace"
+}
